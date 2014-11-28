@@ -18,6 +18,30 @@ var db = conf.mySQL.db,
     dbUser = conf.mySQL.user,
     dbHost = conf.mySQL.host;
 var sequelize = new Sequelize(db, dbUser, dbPass, {
-    host: dbHost
+    host: dbHost,
+    dialect: 'mysql'
 });
 
+sequelize.authenticate().then(function(err) {
+    console.log('Database connection success');
+}, function(err) {
+    console.log('Cant connect to database', err);
+});
+
+// Initialize app
+var app = willy.App();
+
+app.use(require('body-parser')());
+app.use(require('method-override')());
+app.use(require('multer')());
+app.use(require('cookie-parser'));
+
+// Cross domain
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
+var v1 = require(process.cwd() + '/resources/v1/events');
