@@ -1,0 +1,14 @@
+{
+  "name": "sqlNode",
+  "version": "0.0.0",
+  "description": "test for api using sql and node",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Christian",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.10.4"
+  }
+}
