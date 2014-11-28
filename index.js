@@ -1,14 +1,23 @@
+#!/usr/bin/env node
+
+process.chdir(__dirname);
+console.log('Project path: ', process.cwd());   
+
+// 3th party libraries
 var express = require('express'),
-	app = express();
+    session = require('express-session'),
+    Sequelize = require('sequelize');
 
-app.get('/', function(req, res) {
-	res.send('Hola Maricas!');
+// Local libraries
+var willy = require('./lib/willy'),
+    conf = require('./conf');
+
+// conect mysql
+var db = conf.mySQL.db,
+    dbPass = conf.mySQL.pass,
+    dbUser = conf.mySQL.user,
+    dbHost = conf.mySQL.host;
+var sequelize = new Sequelize(db, dbUser, dbPass, {
+    host: dbHost
 });
 
-var server = app.listen(3999, function() {
-	var host = server.address().address,
-		port = server.address().port;
-
-	console.log('listening at http://%s:%s', host, port);
-
-});

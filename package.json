@@ -10,7 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "4.10.4",
+    "express-session": "1.0.2",
+    "body-parser": "1.0.1",
+    "cookie-parser": "1.0.1",
+    "method-override": "1.0.0",
+    "multer": "0.0.5",
     "sequelize": "1.7.9",
-    "mysql": "2.5.3"
+    "mysql": "2.5.3",
+    "underscore": "1.5.2",
+    "chance": "0.5.8"
   }
 }
