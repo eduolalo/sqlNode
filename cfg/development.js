@@ -6,5 +6,6 @@ module.exports = {
         db: 'sqlNode',
         user: 'node',
         pass: 'nodejs'
-    }
+    },
+    cookie: 'node_sql_project'
 };

@@ -19,5 +19,8 @@
     "mysql": "2.5.3",
     "underscore": "1.5.2",
     "chance": "0.5.8"
+  },
+  "scripts": {
+    "init": "./scripts/initialize.js"
   }
 }
