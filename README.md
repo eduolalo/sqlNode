@@ -20,6 +20,12 @@ Create a new data base:
 
 **You can use your own credentials by setting it in cfg/development.js file**
 
+### Install dependencies
+
+```console
+$ npm install
+```
+
 ### Setting initial data
 
 Standing on te path you cloned this repo, run the following command:
